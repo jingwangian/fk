@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Welcome to Fractal Server</title>
+</head>
+
+<body>
+  <div class="container">
+    <h2>The result for Survey with id {{survey_id}} </h2>
+    <table width="800" style="max-width: 500px;">
+      <tr>
+        <th align="left">statistics</th>
+        <th align="left">value</th>
+      </tr>
+      {% for k,v in results.items() %}
+      <tr>
+        <td align="left">{{k}}</td>
+        <td align="left">{{v}}</td>
+      </tr>
+      {% endfor %}
+  </div>
+
+</body>
+
+</html>

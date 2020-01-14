@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  server:
+    build: .
+    image: fractal/server
+    volumes:
+      - .:/opt/server
+    environment:
+      - name=db
+    ports:
+      - "5000:5000"
+    command: bash scripts/start.sh
+    networks: 
+      - fractal_platform_network
+
+networks:
+  fractal_platform_network:
+    name: fractal_platform_network
+    driver: bridge
